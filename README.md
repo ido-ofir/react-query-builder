@@ -18,14 +18,14 @@ let myFilterDefs = [
     operators: [
       {
         label: 'Is',
-				operator: 'eq',
-				inputType: 'text',
-			}
+        operator: 'eq',
+        inputType: 'text',
+      }
     ],
   }
 ];
 
-function myQueryChangeHandler(query) {
+function handleQueryChange(query) {
   // Do stuff with the query
 }
 
