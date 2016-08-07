@@ -25,7 +25,7 @@ let myFilterDefs = [
   }
 ];
 
-function myQueryChangeHandler(query) {
+function handleQueryChange(query) {
   // Do stuff with the query
 }
 
