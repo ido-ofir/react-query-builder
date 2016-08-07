@@ -81,7 +81,7 @@ export default class QueryBuilder extends React.Component {
 				});
 
 			let query = this.filtersToQuery(this.state.filters);
-			this.props.applyQuery(query);
+			this.props.handleQueryChange(query);
 		});
 	}
 
@@ -272,7 +272,7 @@ export default class QueryBuilder extends React.Component {
 
 QueryBuilder.propTypes = {
 	filterDefs: React.PropTypes.array.isRequired,
-	applyQuery: React.PropTypes.func.isRequired,
+	handleQueryChange: React.PropTypes.func.isRequired,
 	initialFilters: React.PropTypes.array,
 };
 

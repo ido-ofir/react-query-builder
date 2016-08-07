@@ -71,12 +71,12 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var applyQuery = function applyQuery(query) {
+	function handleQueryChange(query) {
 		console.log(query);
 		document.getElementById('query').innerHTML = JSON.stringify(query, null, '  ');
 	};
 
-	_reactDom2.default.render(_react2.default.createElement(_queryBuilder2.default, { filterDefs: _sampleFilterDefs2.default, applyQuery: applyQuery }), document.getElementById('queryBuilder'));
+	_reactDom2.default.render(_react2.default.createElement(_queryBuilder2.default, { filterDefs: _sampleFilterDefs2.default, handleQueryChange: handleQueryChange }), document.getElementById('queryBuilder'));
 
 /***/ },
 /* 2 */
@@ -21627,7 +21627,7 @@
 					});
 
 					var query = _this3.filtersToQuery(_this3.state.filters);
-					_this3.props.applyQuery(query);
+					_this3.props.handleQueryChange(query);
 				});
 			}
 		}, {
@@ -21838,7 +21838,7 @@
 
 	QueryBuilder.propTypes = {
 		filterDefs: _react2.default.PropTypes.array.isRequired,
-		applyQuery: _react2.default.PropTypes.func.isRequired,
+		handleQueryChange: _react2.default.PropTypes.func.isRequired,
 		initialFilters: _react2.default.PropTypes.array
 	};
 
