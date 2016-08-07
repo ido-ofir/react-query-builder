@@ -2,7 +2,7 @@
 
 A React component for building queries/filters.
 
-![Demo](query-builder-demo.gif)
+![Demo](demo/demo.gif)
 
 This component is intended for use with [Json-Query-Language](https://github.com/CanopyTax/Json-Query-Language), but you can define your own operators and handle them on your backend however you want.
 
