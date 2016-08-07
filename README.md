@@ -18,9 +18,9 @@ let myFilterDefs = [
     operators: [
       {
         label: 'Is',
-				operator: 'eq',
-				inputType: 'text',
-			}
+        operator: 'eq',
+        inputType: 'text',
+      }
     ],
   }
 ];
