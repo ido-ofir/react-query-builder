@@ -1,2 +1,2 @@
 # query-builder
-UI element for building queries/filters.
+A React component for building queries/filters.
