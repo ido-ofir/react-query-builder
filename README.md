@@ -1,9 +1,38 @@
 # react-query-builder
+
 A React component for building queries/filters.
 
-## Usage
+![Demo](query-builder-demo.gif)
 
-Work in progress
+This component is intended for use with [Json-Query-Language](https://github.com/CanopyTax/Json-Query-Language), but you can define your own operators and handle them on your backend however you want.
+
+## Example Usage
+
+```javascript
+import QueryBuilder from `react-query-builder`;
+
+let myFilterDefs = [
+  {
+    field: 'name',
+    label: 'Name',
+    operators: [
+      {
+        label: 'Is',
+				operator: 'eq',
+				inputType: 'text',
+			}
+    ],
+  }
+];
+
+function myQueryChangeHandler(query) {
+  // Do stuff with the query
+}
+
+<QueryBuilder filterDefs={myFilterDefs} handleQueryChange={handleQueryChange} />
+```
+
+More documentation is a WIP
 
 ## Development
 
