@@ -7,7 +7,8 @@
     "dist": "webpack --optimize-minimize",
     "compile": "babel src --out-dir dist",
     "build": "npm run dist && npm run compile",
-    "prepublish": "npm run compile"
+    "prepublish": "npm run compile",
+		"watch": "webpack -w"
   },
   "repository": {
     "type": "git",
@@ -29,15 +30,23 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.23.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "webpack": "^1.13.1"
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "peerDependencies": {
     "react": "^15.3.0",
     "react-dom": "^15.3.0"
   },
-	"optionalDependencies": {
-		"canopy-styleguide": "*"
-	}
+  "optionalDependencies": {
+    "canopy-styleguide": "*"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "lodash": "^4.14.1"
+  }
 }
