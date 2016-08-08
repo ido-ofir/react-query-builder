@@ -20,7 +20,7 @@ _Note: not yet published_
 
 + [`filterDefs`](#filterdefs): **(required)** an array of objects that define all possible filters that can be applied to the query
 + `handleQueryChange`: **(required)** a function that gets called every time the query changes with the new query
-+ [`initialFilters`](#initialfilters-optional): filters with which to initialize
++ [`initialFilters`](#initialfilters-optional): _(optional)_ filters with which to initialize
 
 ### Simple Usage
 
