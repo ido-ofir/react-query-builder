@@ -18,9 +18,9 @@ _Note: not yet published_
 
 ### Props
 
-+ `filterDefs`: _(required)_ an array of objects that define all possible filters that can be applied to the query
-+ `handleQueryChange`: _(required)_ a function that gets called every time the query changes with the new query
-+ `initialFilters`: filters with which to initialize
++ [`filterDefs`](#filterdefs): **(required)** an array of objects that define all possible filters that can be applied to the query
++ `handleQueryChange`: **(required)** a function that gets called every time the query changes with the new query
++ [`initialFilters`](#initialfilters-optional): filters with which to initialize
 
 ### Simple Usage
 
@@ -52,9 +52,9 @@ function handleQueryChange(query) {
 
 `filterDefs` is an array of objects that define the possible filters that can be applied to the query. Each object has the following fields:
 
-+ `field`: *(required)* the field on which to filter, will be passed into the query (i.e. 'first_name')
-+ `label`: *(required)* the display label for the filter (i.e. 'First Name')
-+ `operators`: *(required)* an array of operator objects that are supported on this filter (see `operators` below)
++ `field`: **(required)** the field on which to filter, will be passed into the query (i.e. 'first_name')
++ `label`: **(required)** the display label for the filter (i.e. 'First Name')
++ [`operators`](#operators): **(required)** an array of operator objects that are supported on this filter (see [`operators`](#operators) below)
 + `shouldDisableFilter`: _(optional)_ a function to determine whether the filter should be disabled. When disabled, a filter will not appear in the list of available filters, and any currently applied filters of that type will be "grayed out" in the list and not included in the query. This is useful for indicating that a filter is "incompatible" with something else.
 
 Example:
@@ -76,9 +76,9 @@ let myFilterDefs = [
 
 Each operator object has (or can have) the following fields:
 
-+ `operator`: *(required)* the operator value to be passed to the query (i.e. 'in')
-+ `label`: *(required)* the display label for the operator, displayed as a radio button option within a filter (i.e. 'is any of')
-+ `inputType`: *(required)* the input type to display for that operator. Supported values are 'text' and 'none' (use a `defaultValue`, see below)
++ `operator`: **(required)** the operator value to be passed to the query (i.e. 'in')
++ `label`: **(required)** the display label for the operator, displayed as a radio button option within a filter (i.e. 'is any of')
++ `inputType`: **(required)** the input type to display for that operator. Supported values are 'text' and 'none' (use a `defaultValue`, see below)
 + `defaultValue`: _(optional)_ the default value for a filter. This is especially useful if you want your operator to have an `inputType` of 'none' to have a "hard-coded" filter.
 + `shouldApplyFilter`: _(optional)_ a function to determine whether to apply the filter to the query, to be called with one argument: the current user-entered value. This is useful if you don't want to apply, say, filters with empty strings.
 + `valueTransformer`: _(optional)_ a function to transform your value before applying to the query, to be called with one argument: the current user-entered value.
