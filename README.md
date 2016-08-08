@@ -4,7 +4,7 @@ A React component for building queries/filters.
 
 ![Demo](demo/demo.gif)
 
-The `QueryBuilder` component provides a simple and user-friendly interface to build a query, based on possible filters and operators that you define.
+The `QueryBuilder` component provides a simple and user-friendly interface to build a query (or set of filters) for a data set, based on custom filters and operators.
 
 It is intended to produce [Json-Query-Language](https://github.com/CanopyTax/Json-Query-Language), but operators can be defined and handled however you want.
 
@@ -19,7 +19,7 @@ _Note: not yet published_
 ### Props
 
 + [`filterDefs`](#filterdefs): **(required)** an array of objects that define all possible filters that can be applied to the query
-+ `handleQueryChange`: **(required)** a function that gets called every time the query changes with the new query
++ `handleQueryChange`: **(required)** a function that gets called every time the query changes, to be called with one argument: the new query
 + [`initialFilters`](#initialfilters-optional): _(optional)_ filters with which to initialize
 
 ### Simple Usage
@@ -50,7 +50,7 @@ function handleQueryChange(query) {
 
 ### `filterDefs`
 
-`filterDefs` is an array of objects that define the possible filters that can be applied to the query. Each object has the following fields:
+`filterDefs` is an array of objects that define all possible filters that can be applied to the query. Each object in the array has the following fields:
 
 + `field`: **(required)** the field on which to filter, will be passed into the query (i.e. 'first_name')
 + `label`: **(required)** the display label for the filter (i.e. 'First Name')
@@ -72,7 +72,9 @@ let myFilterDefs = [
 
 ### `operators`
 
-`operators`, within each filterDef object, is an array of operator objects that describes which operators are supported by the filter and what the input type should look like for that operator. For example, a `first_name` filter might support an operator called "startswith" and use a text input, while a `created_on` filter might support an operator called "between" and use a datepicker range input.
+`operators`, within each filterDef object, is an array of operator objects that describes which operators are supported by the filter and what the input type should look like for that operator.
+
+For example, a `first_name` filter might support an operator called "startswith" and use a text input, while a `created_on` filter might support an operator called "between" and use a datepicker range input.
 
 Each operator object has (or can have) the following fields:
 
@@ -109,10 +111,10 @@ The query passed to your `handleQueryChange` function will be an array of object
 
 ### `initialFilters` (optional)
 
-Optionally, you can pass array of filters with which to initialize the component. Each filter should have the following fields:
+Optionally, you can pass an array of filters to initialize the component. Each filter should have the following fields:
 
 + `field`: the filtered field
-+ `operatorIndex`: the index (in `operators` of the filtered field's filterDef) of the applied operator. This has to be an index because a filter can have multiple operators with the same `operator` string.
++ `operatorIndex`: the index (in `operators` of the filtered field's filterDef) of the applied operator. _(This has to be an index because a filter can have multiple operators with the same `operator` string.)_
 + `value`: the value
 
 Example:
