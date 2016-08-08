@@ -20,7 +20,7 @@ _Note: not yet published_
 
 + [`filterDefs`](#filterdefs): **(required)** an array of objects that define all possible filters that can be applied to the query
 + `handleQueryChange`: **(required)** a function that gets called every time the query changes, to be called with one argument: the new query
-+ [`initialFilters`](#initialfilters-optional): _(optional)_ filters with which to initialize
++ [`initialFilters`](#initial-filters-optional): _(optional)_ filters with which to initialize
 
 ### Simple Usage
 
@@ -48,7 +48,7 @@ function handleQueryChange(query) {
 <QueryBuilder filterDefs={myFilterDefs} handleQueryChange={handleQueryChange} />
 ```
 
-### `filterDefs`
+### filterDefs
 
 `filterDefs` is an array of objects that define all possible filters that can be applied to the query. Each object in the array has the following fields:
 
@@ -70,7 +70,7 @@ let myFilterDefs = [
 ];
 ```
 
-### `operators`
+### Operators
 
 `operators`, within each filterDef object, is an array of operator objects that describes which operators are supported by the filter and what the input type should look like for that operator.
 
@@ -109,7 +109,7 @@ let myOperators = [
 
 The query passed to your `handleQueryChange` function will be an array of objects, each with three fields: `field`, `operator`, and `value`.
 
-### `initialFilters` (optional)
+### Initial Filters (optional)
 
 Optionally, you can pass an array of filters to initialize the component. Each filter should have the following fields:
 
